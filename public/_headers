@@ -1,0 +1,5 @@
+/opencv.js
+  Content-Type: application/javascript
+
+/*.wasm
+  Content-Type: application/wasm

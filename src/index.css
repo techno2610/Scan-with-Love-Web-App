@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AR Camera App Design System - Futuristic & High-Tech */
+
+@layer base {
+  :root {
+    /* Dark tech theme with pink/purple/red palette */
+    --background: 330 15% 8%;
+    --foreground: 300 20% 98%;
+
+    --card: 330 15% 10%;
+    --card-foreground: 300 20% 98%;
+
+    --popover: 330 15% 10%;
+    --popover-foreground: 300 20% 98%;
+
+    /* Vibrant primary - hot pink */
+    --primary: 330 100% 60%;
+    --primary-foreground: 330 15% 8%;
+    --primary-glow: 330 100% 75%;
+
+    /* Subtle secondary - deep purple */
+    --secondary: 280 20% 15%;
+    --secondary-foreground: 300 20% 98%;
+
+    --muted: 330 15% 12%;
+    --muted-foreground: 300 15% 65%;
+
+    /* Bright accent - electric purple */
+    --accent: 280 100% 65%;
+    --accent-foreground: 330 15% 8%;
+
+    /* Danger - bright red */
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 330 15% 8%;
+
+    /* Success - magenta pink */
+    --success: 320 100% 65%;
+    --success-foreground: 330 15% 8%;
+
+    /* Warning - coral red */
+    --warning: 15 100% 65%;
+    --warning-foreground: 330 15% 8%;
+
+    --border: 330 15% 20%;
+    --input: 330 15% 15%;
+    --ring: 330 100% 60%;
+
+    /* Gradients for stunning pink/purple effects */
+    --gradient-primary: linear-gradient(135deg, hsl(330 100% 60%), hsl(330 100% 75%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 100% 65%), hsl(330 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(330 15% 8%), hsl(330 15% 10%));
+    --gradient-rainbow: linear-gradient(135deg, hsl(330 100% 60%), hsl(280 100% 65%), hsl(0 100% 65%));
+    
+    /* Glows and shadows with pink/purple theme */
+    --glow-primary: 0 0 40px hsl(330 100% 60% / 0.4);
+    --glow-accent: 0 0 40px hsl(280 100% 65% / 0.4);
+    --glow-success: 0 0 40px hsl(320 100% 65% / 0.4);
+    
+    /* Smooth animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode - cleaner for camera use with pink accents */
+  .light {
+    --background: 350 50% 98%;
+    --foreground: 330 15% 8%;
+    --card: 350 50% 100%;
+    --card-foreground: 330 15% 8%;
+    --border: 330 25% 91%;
+    --input: 330 25% 94%;
+    --primary: 330 100% 55%;
+    --accent: 280 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow: hidden; /* Prevent scrolling for fullscreen app */
+  }
+  
+  /* Custom scrollbar for any overflow areas */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-glow;
+  }
+}
+
+@layer components {
+  /* Glowing button effect */
+  .btn-glow {
+    @apply relative overflow-hidden;
+    box-shadow: var(--glow-primary);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-primary), 0 10px 20px hsl(var(--primary) / 0.2);
+  }
+  
+  /* Pulsing animation for active states */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from {
+      box-shadow: var(--glow-primary);
+    }
+    to {
+      box-shadow: var(--glow-primary), 0 0 60px hsl(var(--primary) / 0.6);
+    }
+  }
+  
+  /* Gradient text with rainbow effect */
+  .text-gradient {
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glass morphism effect with pink tint */
+  .glass {
+    background: hsl(330 100% 60% / 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(330 100% 60% / 0.2);
+  }
+  
+  /* Scanner line animation with pink glow */
+  .scanner-line {
+    animation: scanner 2s ease-in-out infinite;
+    background: linear-gradient(90deg, transparent, hsl(330 100% 60%), transparent);
+  }
+  
+  @keyframes scanner {
+    0%, 100% { transform: translateY(-100%); opacity: 0; }
+    50% { transform: translateY(100vh); opacity: 1; }
+  }
+  
+  /* Heartbeat animation for love message */
+  .heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+}
