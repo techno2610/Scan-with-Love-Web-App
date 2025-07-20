@@ -55,7 +55,7 @@ useEffect(() => {
 
   const loadTargetTemplate = () => {
   const img = new Image();
-  img.src = '/DetectionImage2.jpeg';
+  img.src = '/DetectionImage.jpeg';
 
   img.onload = () => {
     try {
@@ -84,7 +84,7 @@ useEffect(() => {
   };
 
   img.onerror = (e) => {
-    console.error("Failed to load DetectionImage2.jpeg", e);
+    console.error("Failed to load DetectionImage.jpeg", e);
   };
 };
 
@@ -201,7 +201,7 @@ useEffect(() => {
 
         console.log("Match confidence:", maxVal);
 
-        if (maxVal >= 0.55 && !isPlayingVideo) {
+        if (maxVal >= 0.7 && !isPlayingVideo) {
   console.log("🎯 Target detected!");
 
   // Stop detection
@@ -291,7 +291,7 @@ const handleCloseVideo = () => {
 
       <img
         id="target-image"
-        src="/DetectionImage2.jpeg"
+        src="/DetectionImage.jpeg"
         alt="template"
         style={{ display: "none" }}
       />
