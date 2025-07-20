@@ -55,7 +55,7 @@ useEffect(() => {
 
   const loadTargetTemplate = () => {
   const img = new Image();
-  img.src = '/DetectionImage.jpeg';
+  img.src = '/DetectionImage2.jpeg';
 
   img.onload = () => {
     try {
@@ -84,7 +84,7 @@ useEffect(() => {
   };
 
   img.onerror = (e) => {
-    console.error("Failed to load DetectionImage.jpeg", e);
+    console.error("Failed to load DetectionImage2.jpeg", e);
   };
 };
 
@@ -291,7 +291,7 @@ const handleCloseVideo = () => {
 
       <img
         id="target-image"
-        src="/DetectionImage.jpeg"
+        src="/DetectionImage2.jpeg"
         alt="template"
         style={{ display: "none" }}
       />
