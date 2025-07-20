@@ -201,7 +201,7 @@ useEffect(() => {
 
         console.log("Match confidence:", maxVal);
 
-        if (maxVal >= 0.7 && !isPlayingVideo) {
+        if (maxVal >= 0.6 && !isPlayingVideo) {
   console.log("🎯 Target detected!");
 
   // Stop detection
